@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import TeacherDashboard from './pages/teacher-dashboard.js'
+import StudentDashboard from './pages/student-dashboard.js'
+import ClassDashboard from './pages/class-dashboard.js'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <Router>
+        <div>
+          <Link to="/teacher">Teacher</Link> &nbsp;
+          <Link to="/student">Student</Link> &nbsp;
+          <Link to="/class">Class</Link> &nbsp;
+
+          <hr />
+
+          <Route exact path="/teacher" component={TeacherDashboard} />
+          <Route path="/student" component={StudentDashboard} />
+          <Route path="/class" component={ClassDashboard} />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      </Router>
     );
   }
 }
