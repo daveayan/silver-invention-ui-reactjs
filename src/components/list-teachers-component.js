@@ -12,6 +12,7 @@ class ListTeachersComponent extends Component {
           </CardTitle>
           <CardText>
             Coming soon ...
+            {this.props.listOfTeachers}
           </CardText>
         </Card>
     );

@@ -4,15 +4,17 @@ import NewTeacherComponent from '../components/new-teacher-component'
 import ListTeachersComponent from '../components/list-teachers-component'
 
 class TeacherDashboard extends Component {
-  render() {
+  constructor() { 
+    super(); 
+    this.state = { 
+      listOfTeachers: ["a", "b", "c"] 
+    } 
+  }
+  render () {
     return (
       <div>
-        <MuiThemeProvider>
           <NewTeacherComponent></NewTeacherComponent>
-        </MuiThemeProvider>
-        <MuiThemeProvider>
-          <ListTeachersComponent></ListTeachersComponent>
-        </MuiThemeProvider>
+          <ListTeachersComponent listOfTeachers = {this.state.listOfTeachers}></ListTeachersComponent>
       </div>
     );
   }

@@ -7,12 +7,8 @@ class ClassDashboard extends Component {
   render() {
     return (
       <div>
-        <MuiThemeProvider>
           <NewClassComponent />
-        </MuiThemeProvider>
-        <MuiThemeProvider>
           <ListClassesComponent />
-        </MuiThemeProvider>
       </div>
     );
   }
